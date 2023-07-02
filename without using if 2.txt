@@ -1,0 +1,21 @@
+/* episod 54 problem 1
+● Write a program that reads an integer and print 100 if number is even or 7 if 
+number is odd
+○ E.g. for input 8 ⇒ 100
+○ E.g. for input 133 ⇒ 7*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+  //(num%2==0)&&(cout<<100)||cout<<7;//if the expression is true then execute cout<<100 else cout<<7
+	bool is_even=(n%2==0);
+	bool is_odd=(1-is_even);
+
+	int result = is_even * 100 + is_odd * 7;
+
+	cout<<result<<"\n";
+	return 0;
+}

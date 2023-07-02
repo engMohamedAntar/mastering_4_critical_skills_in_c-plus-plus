@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n,m,sum,cnt=0;
+	cin>>n>>m>>sum;
+	for(int i=1;i<=n;i++)
+    {
+        int j=sum-i;
+        if(j>=1&&j<=m)
+            cnt++;  
+    }
+    cout<<cnt;
+	return 0;
+}
+
+//instead of using two for loops we have used only one loop
+
+
+

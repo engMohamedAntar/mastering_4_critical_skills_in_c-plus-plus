@@ -1,0 +1,20 @@
+//episod 76 problem 3
+#include<iostream>
+using namespace std;
+int main() {
+        int n,m;
+        cin>>n>>m;
+        int count_n=1;
+        while(count_n<=n)
+        {
+            int count_m=1;
+            while(count_m<=m)
+            {
+                cout<<count_n<<"*"<<count_m<<"= "<<count_n*count_m<<endl;
+                count_m++;
+            }
+            count_n++;
+        }
+
+	return 0;
+}

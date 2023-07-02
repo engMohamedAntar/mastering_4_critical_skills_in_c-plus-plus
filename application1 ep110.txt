@@ -1,0 +1,96 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main() {
+    system("Color 0A");
+    int const sz=1000;
+    string name[sz];
+    int age[sz];
+    int salary[sz];
+    char gender[sz];
+    int count=0;//number of employees added
+    while(true)
+    {
+         cout<<"Enter your choice: \n"<<
+         "1) Add new employee \n"<<
+         "2) Print all employees\n"<<
+         "3) Delete by age \n"<<
+         "4) Update Salary by name"<<endl;
+         int choice;
+         cin>>choice;
+         switch(choice)
+         {
+         case 1: //add new employee
+             {
+                cout<<"Enter name: ";
+                cin>>name[count];
+                cout<<"\nEnter age: ";
+                cin>>age[count];
+                cout<<"\nEnter salary: ";
+                cin>>salary[count];
+                cout<<"\nEnter gender: ";
+                cin>>gender[count];
+                count++;
+                break;
+             }
+
+         case 2: //print all employees
+            {
+                cout<<"*************************"<<endl;
+                for(int i=0;i<count;i++)
+                {
+                    cout<<name[i]<<" "<<age[i]<<" "<<salary[i]<<" "<<gender[i]<<endl;
+                }
+            break;
+            }
+         case 3: //delete by age
+             {
+                 cout<<"*************************"<<endl;
+                 int start,end;
+                 cout<<"Enter start and end age: ";
+                 cin>>start>>end;
+                 for(int i=0;i<count;i++)
+                 {
+                     if(age[i]>=start && age[i]<=end)
+                     {
+                        name[i]=name[++i];
+                        age[i]=age[++i];
+                        salary[i]=salary[++i];
+                        gender[i]=gender[++i];
+                         count--;
+                     }
+                 }
+
+                 break;
+             }
+
+         case 4:  //update salary by name
+            {
+                cout<<"*************************"<<endl;
+                cout<<"Enter the name and salary: ";
+                string newname;int newsalary;
+                 cin>>newname>>newsalary;
+                 bool is_found=false;
+                for(int i=0;i<count;i++)
+                {
+                    if(name[i]==newname)
+                    {
+                       salary[i]=newsalary;
+                       is_found=true;
+                    }
+                }
+                if(!is_found)
+                    cout<<"Name not found"<<endl;
+                break;
+            }
+         default:
+             {
+            cout<<"*************************"<<endl;
+            cout<<"Choice doesn't excist\n";
+             }
+
+         }
+    }
+	return 0;
+}

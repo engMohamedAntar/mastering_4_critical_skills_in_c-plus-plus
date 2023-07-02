@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+/*
+
+*****
+****
+***
+**
+*
+
+*/
+
+int main() {
+
+   int n;cin>>n;
+   for(int r=n;r>0;r--)
+   {
+       for(int c=r;c>0;c--)
+         cout<<"*";
+       cout<<endl;
+   }
+
+
+   /*
+    int n;
+    cin>>n;
+    int row=n;
+    while(row>0)
+    {
+        int star_count=1;
+        while(star_count<=row)
+        {
+            cout<<"*";
+            star_count++;
+        }
+        cout<<endl;
+        row--;
+
+    }
+*/
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+

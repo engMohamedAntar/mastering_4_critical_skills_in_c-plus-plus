@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+double arr_avg(int arr[],int len)
+{
+    if(len==1)
+        return arr[0];
+   double subresult=arr_avg(arr,len-1);//this line computes the average of arr,len-1
+   subresult*=(len-1); //this line converts the value of subresult from average to sum
+   return (subresult+arr[len-1])/len;
+}
+int main()
+{
+ int arr[]={1,8,2,10,3};
+ cout<<arr_avg(arr,5);
+ return 0;
+}

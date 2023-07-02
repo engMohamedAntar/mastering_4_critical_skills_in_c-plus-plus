@@ -1,0 +1,87 @@
+// ep 85 with two nested for loops
+/*#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+     cin>>arr[i];
+    }
+   int max_repeat=-1,max_value=-1;
+    for(int i=0;i<n;i++)
+    {    int repeat=0;
+        for(int j=0;j<n;j++)
+        {
+           repeat+=(arr[i]==arr[j]);
+           if(max_repeat<repeat)
+           {
+               max_repeat=repeat;
+               max_value=arr[i];
+           }
+        }
+
+    }
+    cout<<max_value<<" repeated "<<max_repeat<<" times\n";
+	return 0;
+}*/
+
+
+/*
+// ep 85 using frequency array
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int freq[n]={0};
+    for(int i=0;i<n;i++)
+    {int value;
+     cin>>value;
+     freq[value]++;
+    }
+    int max_pos=-1;
+    for(int i=0;i<n;i++)
+    {
+       if(freq[max_pos]<freq[i])
+            max_pos=i;           
+    }
+    cout<<max_pos<<" repeated "<<freq[max_pos]<<" times\n";
+	return 0;
+}
+*/
+
+
+
+/*//ep 91 problem 3 ( numbers from -500 to 270)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	const int MAX = 270 + 500 + 1;
+	int frequency[MAX] = { 0 };
+
+	for (int i = 0; i < n; i++)
+    {
+		int value;
+		cin >> value;
+
+		value += 500;	// shift all values to be positive
+		frequency[value]++;
+	}
+
+	int mx_pos = 0;
+	for (int i = 0; i < MAX; i++) {
+		if (frequency[mx_pos] < frequency[i])
+			mx_pos = i;
+	}
+	cout << mx_pos - 500 << " has repeated " << frequency[mx_pos] << " times ";
+    return 0;
+}
+*/

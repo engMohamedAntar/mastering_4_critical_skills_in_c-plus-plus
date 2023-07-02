@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+   string str1,str2;
+   cin>>str1>>str2;
+   if(str1.size()<str2.size())
+   {
+    cout<<"NO"<<endl;   
+    return 0;
+   }
+    
+   for(int i=0;i<str1.size()-str2.size()+1;i++)
+   {
+        bool is_sub=true;
+        for(int j=0;j<str2.size();j++)
+        {
+             if(str1[i+j]!=str2[j]&&is_sub)
+                is_sub=false;
+        }
+        if(is_sub)
+        {
+          cout<<"YES"<<endl;
+          return 0;
+        }
+   }
+   cout<<"NO"<<endl;
+   return 0;
+}

@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+
+	int D, R, C, type;
+	int d, r, c, idx;
+
+	cin >> D >> R >> C >> type;
+
+	int layer = R * C;
+
+	if (type == 1)
+	{
+		cin >> d >> r >> c;
+		idx = d * layer + r * C + c;
+		cout << idx << "\n";
+	}
+	else
+    {
+		cin>>idx;
+
+		// r * C + c < layer
+		d = idx / layer;                // d*layer/layer=d   ,  r*C+c/layer is zero     so d+zero = d
+
+		// Remove d part, then extract r
+		r = (idx % layer) / C;
+
+		c = (idx % layer) % C;
+
+		cout << d << " " << r << " " << c << "\n";
+	}
+
+	return 0;
+}
+/*
+3 4 5
+1
+1 0 0
+*/

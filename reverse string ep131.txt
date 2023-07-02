@@ -1,0 +1,63 @@
+
+//best way
+#include<iostream>
+using namespace std;
+string reverse_str(const string &str)
+{
+   int start=0,end=str.size()-1;
+   string rev=str;
+   while(start<end)
+   {
+       char temp=rev[start];
+       rev[start]=rev[end];
+       rev[end]=temp;
+
+       start++,end--;
+   }
+   return rev;
+}
+int main() {
+    string name="Mohamed";
+    cout<<reverse_str(name)<<endl;
+
+return 0;
+}
+
+//my first code
+/*#include <iostream>
+using namespace std;
+string reverse_str(const string &str)
+{
+    int n=str.size();
+    string cpy_str;
+    for(int i=0;i<n;i++)
+    {
+        cpy_str[i]=str[n-1-i];
+    }
+    return cpy_str;
+}
+int main() {
+static string name="Mohamed";
+cout<<reverse_str(name)<<endl;
+return 0;
+}
+*/
+
+//my second code
+/*#include<iostream>
+using namespace std;
+string reverse_str(const string &str)
+{
+    int n=str.size();
+    char cpy[n];
+    for(int i=0;i<n;i++)
+    {
+        cpy[i]=str[n-1-i];
+    }
+    return cpy;
+}
+int main() {
+static string name="Mohamed";
+cout<<reverse_str(name)<<endl;
+
+}*/

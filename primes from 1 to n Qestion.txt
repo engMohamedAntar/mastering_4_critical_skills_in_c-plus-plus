@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	bool first_print = true;
+
+	for (int i= 2; i<= n; ++i)
+        {
+            bool is_prime = true;
+
+            for (int j = 2; j< i; ++j) {
+                if (i % j== 0)
+                {
+                    is_prime = false;
+                    break;
+                }
+            }
+
+            if (is_prime)
+            {
+                if(!first_print)
+                    cout<<",";
+
+                cout << i;
+
+                first_print = false;
+            }
+	 }
+
+	return 0;
+}
+//why ',' is not printed after the last number

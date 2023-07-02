@@ -1,0 +1,49 @@
+/*#include <iostream>
+using namespace std;
+
+int main() {
+	string str;
+	cin >> str;
+
+	str += "$";
+	int cnt = 1;
+	bool is_first_group = true;
+
+	for (int i = 1; i < (int) str.size(); i++)
+    {
+		if (str[i]!=str[i - 1])
+		{
+			if (!is_first_group)
+				cout << "_";
+            is_first_group=false;
+			cout << str[i - 1]<<cnt;
+
+			cnt=0;
+		}
+		++cnt;
+	}
+	return 0;
+}*/
+#include <iostream>
+using namespace std;
+
+int main() {
+	string str;
+	cin >> str;
+	int cnt=1;
+	bool first_print=true;
+	for(int i=1;i<=str.size();i++)
+    {
+        if(str[i]!=str[i-1])
+        {
+            if(!first_print)
+                cout<<"_";
+            first_print=false;
+            cout<<str[i-1]<<cnt;
+            cnt=0;
+        }
+        cnt++;
+    }
+	return 0;
+}
+s

@@ -1,0 +1,14 @@
+/*
+ //problem 3 episod 32
+ if n=5 ,then the result would be 1+2+3+4+5
+*/
+#include<iostream>
+using namespace std;
+
+int main(){
+   int n;
+   cin>>n;
+   cout<<n*(n+1)/2;
+	return 0;
+}
+

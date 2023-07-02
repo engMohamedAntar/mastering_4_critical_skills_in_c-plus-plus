@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int read_arr(int arr[])
+{
+    int len;
+    cout<<"Enter length of the array"<<endl;
+    cin>>len;
+    cout<<"Enter array values\n";
+    for(int i=0;i<len;i++)
+        cin>>arr[i];
+    return len;
+}
+bool is_palindrome(int arr[],int len)
+{
+   bool is_pal=true;
+    int start=0;
+    int end=len-1;
+    while(start<end)
+    {
+      if(arr[start]!=arr[end])
+        is_pal=false;
+      start++,end--;
+    }
+
+    return is_pal;
+}
+int main() {
+int arr[100];
+int len=read_arr(arr);
+cout<<is_palindrome(arr,len);
+	return 0;
+}
+

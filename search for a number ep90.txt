@@ -1,0 +1,57 @@
+//first solution (using nested loops)
+/*#include<iostream>
+using namespace std;
+
+int main() {
+	int n,q;
+	cin >> n;
+	int arr[n];
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+
+	cin >> q;
+	while (q--)
+        {
+		int num;
+		cin >> num;
+
+		int pos = -1;
+		// search from the end
+		for (int i = n-1; i >= 0; --i)
+        {
+			if (arr[i] == num)
+			{
+				pos = i;
+				break;
+			}
+		}
+		cout << pos << "\n";
+	}
+	return 0;
+}*/
+//second solution (without using nested loops)
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int N = 500 + 1;
+	int ans[N];
+
+	for (int i = 0; i < N; i++)
+		ans[i] = -1; /** at first the answer of any number is -1 **/
+
+    int n,value;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> value;
+		ans[value] = i;/** update the answer for value to be i **/
+	}
+
+	int q,num;
+	cin >> q;
+	while (q--) {
+		cin >> num;
+		cout << ans[num]<< endl;
+	}
+	return 0;
+}

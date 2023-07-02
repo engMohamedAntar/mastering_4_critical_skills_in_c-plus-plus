@@ -1,0 +1,34 @@
+//ep120 problem 3
+#include<iostream>
+using namespace std;
+
+int main() {
+	int rows, cols, k, r = 0, c = 0;
+
+	cin >> rows >> cols >> k;
+
+	// Direction from 1 to 4: up, right, down, left
+	int rd[4] = { -1, 0, 1, 0 };
+	int cd[4] = { 0, 1, 0, -1 };
+
+	while (k--)
+    {
+		int dir, steps;
+		cin >> dir >> steps;
+		--dir;
+
+		r = (r + rd[dir] * steps) % rows;
+		c = (c + cd[dir] * steps) % cols;
+//in case of moving to the top r may be negative, in case of moving to the left c may be negative
+//so in case r is negative we will add rows to it, and in case c is negative will will add columns to it
+		if (r < 0)
+			r += rows;
+		if (c < 0)
+			c += cols;
+
+		cout << r << " " << c << "\n";
+	}
+
+	return 0;
+}
+// 3 4   4   2 1   3 2   4 2   1 3

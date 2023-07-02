@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n,mn[3];
+	cin>>n;
+	for(int i=0;i<n;i++)
+    {   int value;
+        cin>>value;
+
+        if(i<3)
+            mn[i]=value;
+        else
+        { int max_pos=0;
+        //get the maximum position of the mn array
+           for(int j=1;j<3;j++)
+           {
+               if(mn[max_pos]<mn[j])
+                   max_pos=j;
+           }
+           if(value<mn[max_pos])
+            mn[max_pos]=value;
+        }
+    }
+    //sorting the mn array
+    //step 1 find the max_position
+    int max_pos=0;
+    for(int i=1;i<3;i++)
+    {
+        if(mn[max_pos]<mn[i])
+            max_pos=i;
+    }
+    //step 2 swap between the last value and the max_value
+    int temp=mn[2];
+    mn[2]=mn[max_pos];
+    mn[max_pos]=temp;
+    //step 3 swap between the 1st and 2nd positions if the condition satisfied
+    if(mn[0]>mn[1])
+    {
+        temp=mn[0];
+        mn[0]=mn[1];
+        mn[1]=temp;
+    }
+
+
+    for(int i=0;i<3;i++)
+        cout<<mn[i]<<" ";
+	return 0;
+}

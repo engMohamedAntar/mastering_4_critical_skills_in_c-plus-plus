@@ -1,0 +1,52 @@
+//my solution
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin>>n;
+	int last_value=0,last_index=0;
+	int arr[201]={0};
+	for(int i=last_index;i<n;i++)
+    {
+       int x=last_value-last_index-1;
+      if(x<=0||arr[x]!=0)
+          x=last_value+last_index+1;
+
+     last_value=x;
+     last_index++;
+     arr[x]=1;
+     }
+    cout<<last_value<<" ";
+	return 0;
+}
+/*
+//mostafa saad solution
+#include <iostream>
+using namespace std;
+
+int main() {
+	int sequence[201], indx;
+
+	int occurrence[201] = { 0 };
+
+	cin >> indx;
+	sequence[0] = 0;
+	occurrence[0] = 1;
+
+	for (int i = 0; i < indx; i++)
+    {
+		int x = sequence[i] - i - 1;
+
+		if (x < 0 || occurrence[x])
+			x = sequence[i] + i + 1;
+
+		sequence[i+1] = x;
+		occurrence[x] = 1;
+	}
+
+	cout << sequence[indx];
+
+}
+*/

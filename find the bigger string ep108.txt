@@ -1,0 +1,33 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s1;
+    cin>>s1;
+    string s2;
+    cin>>s2;
+    int x;
+    x=min(s1.size(),s2.size());
+   int result=-1;
+   for(int i=0;result==-1&&i<x;i++)
+   {
+       if(s1[i]<s2[i])
+        result=1;
+       else if(s1[i]>s2[i])
+        result=0;
+   }
+   if(result==-1)//if s1 match s2
+   {
+       if(s1.size()<=s2.size())
+        result=1;
+       else
+        result=0;
+   };
+   if(result==1)
+    cout<<"YES"<<endl;
+   else
+    cout<<"FALSE"<<endl;
+ return 0;
+}

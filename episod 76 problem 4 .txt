@@ -1,0 +1,54 @@
+/*
+Problem #4: Special Sum
+● Read integer T for number of test cases. 
+● For each test case read integer N. Then read N integers a, b, c
+● Output: Compute the sum of the following expression:
+○ a, b*b, c*c*c, d*d*d*d, e*e*e*e*e……
+■ That is the k-th number is repeated k times
+● Input: 
+○ 2
+○ 3 5 7 2
+○ 4 1 2 3 4
+● Output
+○ 62 [as (5 + 7*7 + 2*2*2) = 62]
+○ 288 [as (1+2*2+3*3*3+4*4*4*4) = 288]
+
+*/
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int T;
+	cin >> T;
+
+	while (T) {
+		int N;
+		cin >> N;
+
+		int cnt_N = 1;
+		int sum = 0;
+		while (cnt_N <= N) 
+            {
+                int value = 0;
+                cin >> value;
+
+                int cnt_deep = cnt_N;//cnt_N increases each single loop and so cnt_deep
+                int mul = 1;
+
+                while (cnt_deep)
+                {
+                    mul *= value;
+                    cnt_deep--;
+                }
+                
+                sum += mul;
+                cnt_N++;
+		    }
+		cout<<sum<<"\n";
+
+		T--;
+	}
+
+	return 0;
+}

@@ -1,0 +1,71 @@
+/*****************First Code:*******************/
+#include <iostream>
+using namespace std;
+
+int fibonacci(int n) {
+    if (n <= 1)
+        return 1;
+    else
+        return fibonacci(n-1) + fibonacci(n-2);
+}
+
+int main() {             // f0  f1  f2  f3  f4  f5   f6 
+    cout <<fibonacci(6); //  1   1   2   3   5   8   13
+    return 0;
+}  
+
+/***************Second Code:*******************/
+
+ #include <iostream>
+using namespace std;
+
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    else
+        return fibonacci(n-1) + fibonacci(n-2);
+}
+
+int main() {		 // f0  f1  f2  f3  f4  f5  f6
+    cout <<fibonacci(6); // 0   1   1   2   3   5   8 
+    return 0;
+} 
+/***Using dynamic programming to reduce the time complexity from 2^n to n****/
+//1- Using Memoization
+#include <iostream>
+using namespace std;
+int arr[50]={0};
+int fib(int n)
+{
+    if(n<=1)
+        return n;
+    if(arr[n]==0)
+        arr[n]=fib(n-1) + fib(n-2);
+    return arr[n];
+}
+int main() {
+
+        cout<<fib(40);
+    return 0;
+}
+
+//2- Using Tabulation
+
+#include <iostream>
+using namespace std;
+int arr[50]={0};
+int fib(int n)
+{
+    arr[1]=1;
+    arr[2]=1;
+
+    for(int i=3;i<=n;i++)
+        arr[i]=arr[i-1] + arr[i-2];
+    return arr[n];
+}
+int main() {
+
+        cout<<fib(40);
+    return 0;
+}
+

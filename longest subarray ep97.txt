@@ -1,0 +1,57 @@
+//using two nested loops
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int n;
+	cin >> n;
+    int arr[999];
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+
+	int maxLength = 0;
+	int maxStartIndex = -1;
+	int maxEndIndex = -1;
+
+	for (int start = 0; start < n; start++)
+    {
+        int zerosCount = 0;
+        int onesCount = 0;
+
+        for (int end =start; end<n; end++)
+        {
+            if (arr[end] == 1)
+                onesCount++;
+            else if (arr[end] == 0)
+                zerosCount++;
+
+          if (zerosCount == onesCount)
+          {
+             int Length = end - start + 1;
+
+             if (Length > maxLength)
+               {
+                 maxLength = Length;
+                 maxStartIndex = start;
+                 maxEndIndex = end;
+               }
+          }
+        }
+
+	}
+
+	if (maxLength == 0)
+		cout << "NOT FOUND" << endl;
+	else
+    {
+		cout << maxLength << endl;
+		for (int i = maxStartIndex; i <= maxEndIndex; i++)
+			cout << arr[i] << " ";
+		cout << endl;
+	}
+
+	return 0;
+}
+*/

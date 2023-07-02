@@ -1,0 +1,2 @@
+(x < 100) || (x+= 50 > 10);--->if the first condition is false then execute the second one
+(x < 100) && (x+= 50 > 10);--->if the first conditon is true then execute hte second one

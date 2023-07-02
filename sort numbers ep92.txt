@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int arr[501]={0};
+	for(int i=0;i<n;i++)
+    {
+        int value;
+        cin>>value;
+        arr[value]++;
+    }
+    for(int i=0;i<=500;i++)
+    {
+        while(arr[i])
+        {
+            cout<<i<<" ";
+            arr[i]--;
+        }
+    }
+	return 0;
+}
+// This is called count sort algorithm. The most efficient if values are small :)

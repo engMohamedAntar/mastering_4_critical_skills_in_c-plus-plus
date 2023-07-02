@@ -1,0 +1,19 @@
+//unique numbers with the given order
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int arr[501]={0};
+
+	for (int i = 0; i < n; i++)
+    {
+		int value;
+		cin >> value;
+		if (!arr[value])
+			cout<<value<<" ";
+		arr[value] = 1;
+	}
+	return 0;
+}

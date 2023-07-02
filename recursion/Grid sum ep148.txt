@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+int di[] = { 1, 0, 1 };
+int dj[] = { 0, 1, 1 };
+
+int path_sum(int grid[100][100], int Rows, int Cols, int i= 0, int j= 0) {
+	int sum = grid[i][j];
+
+	if (i == Rows - 1 && j == Cols - 1) //the base case
+		return sum;
+
+	int max_idx , max_value=INT_MAX;
+
+    int new_i, new_j;
+	for (int d = 0; d < 3; ++d)
+    {
+		new_i = i + di[d];
+		new_j = j + dj[d];
+
+		if (new_i >= Rows || new_j >= Cols)
+			continue;
+
+		if (max_value < grid[new_i][new_j])
+			max_value = grid[new_i][new_j], max_idx = d;
+	}
+	new_i = i + di[max_idx];
+	new_j = j + dj[max_idx];
+
+	return sum + path_sum(grid, Rows, Cols, new_i, new_j);
+}
+
+int main() {
+
+	int grid[100][100];
+	int n, m;
+
+	cin>>n>>m;
+	for(int i=0;i<n;i++)
+        for(int j=0;j<m;j++)
+            cin>>grid[i][j];
+
+	cout << path_sum(grid,n,m);
+
+	return 0;
+}

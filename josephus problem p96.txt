@@ -1,0 +1,76 @@
+/*#include<iostream>
+using namespace std;
+
+int main() {
+	int n, k;
+
+	cin >> n >> k;
+
+	bool is_removed[199] = {0};
+	int last_pos = 0;
+
+	for (int i = 0; i < n; ++i)
+    {
+		int remaining_alive = n-i;
+
+       int current_k = k;
+       if (k % remaining_alive == 0)
+			current_k = remaining_alive;
+		else
+			current_k = k % remaining_alive;
+
+		int step = 0;
+		int last_person = -1;
+		while (step < current_k)
+        {
+			if (is_removed[last_pos] == 0)
+            {
+                last_person = last_pos;
+                step++;
+            }
+          last_pos = (last_pos + 1) % n;
+		}
+		is_removed[last_person] = 1;
+		cout << last_person + 1 << " ";
+	}
+	return 0;
+}
+*/
+//the same solution
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n,k;
+    cin>>n>>k;
+    int arr[n];
+    bool is_removed[n]={0};
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int last_pos=0;
+    int last_person=-1;
+    for(int i=0;i<n;i++)
+    {
+        int remaining_alive=n-i;
+        if(k%remaining_alive==0)
+            k=remaining_alive;
+        else
+            k=k%remaining_alive;
+        
+       int step=0;
+       while(step<k)
+       {
+           if(is_removed[last_pos]==0)
+           {
+               last_person=last_pos;
+               step++;
+           }
+           last_pos=(last_pos+1)%n;
+       }
+       is_removed[last_person]=1;
+       cout<<last_person+1<<" ";
+    }
+	return 0;
+}

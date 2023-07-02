@@ -1,0 +1,41 @@
+/* episod 64 get an integer number and then get n numbers and display the maximum number of 
+these n numbers (without using any loop);*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int count;
+    cin>>count;
+
+
+	int n,max=INT_MIN;
+
+	if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    if(count>0) { count--; cin>>n;if(n>max)  max=n;}
+    cout<<"The maximum number is: "<<max<<endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

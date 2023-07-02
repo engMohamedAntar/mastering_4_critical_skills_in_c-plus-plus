@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+/*episod 72
+    *         num_of_spaces=n-row
+   ***        num_of_stars=(2*row)-1
+  *****
+ *******
+*********
+*/
+int main() {
+    int n;
+    cin>>n;
+    int row=1;
+    while (row<=n)
+    {
+        //print n-row spaces
+       int start_count=1;
+       while(start_count<=(n-row) )
+       {
+           cout<<" ";
+           start_count++;
+       }
+       //print (2*row)-1 stars
+       start_count=1;
+       while(start_count<=(2*row)-1)
+       {
+           cout<<"*";
+           start_count++;
+       }
+       cout<<endl;
+       row++;
+    }
+// to make the reversed triangle we will just start the row from n to 1
+    row=n;
+    while (row>=1)
+    {
+        //print n-row spaces
+       int start_count=1;
+       while(start_count<=(n-row) )
+       {
+           cout<<" ";
+           start_count++;
+       }
+       //print (2*row)-1 stars
+       start_count=1;
+       while(start_count<=(2*row)-1)
+       {
+           cout<<"*";
+           start_count++;
+       }
+       cout<<endl;
+       row--;
+    }
+	return 0;
+}
+
+
+
+
+
+
+
