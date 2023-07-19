@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+template<class T>
+T multiply(T a , int factor)
+{
+    return a * factor;
+}
+//specialization of the "multiply template function" for the string type.
+template<>
+string multiply(string str, int factor)
+{
+    string res="";
+    while(factor--)
+        res+=str;
+    return res;
+}
+
+
+int main() {
+cout<<multiply(5,3)<<"\n"; // 15
+string x="Antar";
+cout<<multiply(x,3); // AntarAntarAntar
+	return 0;
+}
