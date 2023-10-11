@@ -168,7 +168,7 @@ struct library_system
 
 		int cnt = 0;
 		for (int i = 0; i < total_books; ++i)
-        {
+           {
 			if (books[i].has_prefix(prefix))
 			{
 				cout << books[i].name << "\n";

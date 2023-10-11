@@ -16,7 +16,9 @@ int main() {
 		q.pop();
 	}
 	cout << "\n";
-
+	//Notice that you Can't iterate over the queue this way.
+	/*for(auto x: q)    //error
+        cout<<i<< " ";*/ 
 	queue<string> q_names;
 	q_names.push("mostafa");
 	string name = q_names.front();

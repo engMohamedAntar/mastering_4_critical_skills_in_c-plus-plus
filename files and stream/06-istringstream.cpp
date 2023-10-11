@@ -10,7 +10,7 @@ int main() {
 	int age;
 	iss>>name>>age;
 
-	cout<<age<<"\n";
+	cout<<age<<"\n"; //23
 
 	return 0;
 }
